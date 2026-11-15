@@ -185,8 +185,19 @@ h3 { font-size: 1.5rem; color: var(--deep); margin-top: 1.4em; }
   border: 2px solid rgba(234, 251, 255, .35);
   pointer-events: none;
 }
+/* An illustration instead of a photo: no frame, and a little larger */
+.hero-photo--illustration {
+  width: min(135%, 700px); margin-right: -14%;
+  align-self: end; margin-bottom: -56px;
+}
+.hero-photo--illustration::before { display: none; }
+.hero-photo--illustration img {
+  aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none;
+  filter: drop-shadow(0 18px 24px rgba(4, 22, 40, .25));
+}
 @media (max-width: 860px) {
   .hero-inner--photo { grid-template-columns: 1fr; gap: 32px; }
+  .hero-photo--illustration { width: 112%; margin: 0 -6% -12px; }
   .hero-photo { justify-self: center; width: min(78%, 340px); order: -1; }
 }
 

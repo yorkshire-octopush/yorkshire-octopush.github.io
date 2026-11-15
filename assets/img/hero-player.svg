@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 640">
+  <!-- Illustration of a junior player swimming down towards the puck,
+       holding her stick. Shown on the right of the banner. -->
+  <defs>
+    <pattern id="costume" width="34" height="34" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+      <rect width="34" height="34" fill="#58c23a"/>
+      <path d="M2 8 q6 -7 12 0 t12 0" fill="none" stroke="#1d6b2c" stroke-width="4" stroke-linecap="round"/>
+      <path d="M6 24 q5 6 11 0 t11 0" fill="none" stroke="#1d6b2c" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="28" cy="16" r="2.6" fill="#c7f05a"/>
+      <circle cx="12" cy="17" r="2" fill="#c7f05a"/>
+    </pattern>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6c9a8"/>
+      <stop offset="1" stop-color="#d9946d"/>
+    </linearGradient>
+    <linearGradient id="skinFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d79c7a"/>
+      <stop offset="1" stop-color="#b9785a"/>
+    </linearGradient>
+    <linearGradient id="fin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e9fff1" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#9fe6bd" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="stick" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cdd8df"/>
+    </linearGradient>
+    <linearGradient id="puckSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1e2329"/>
+      <stop offset=".5" stop-color="#3a424b"/>
+      <stop offset="1" stop-color="#1e2329"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3d6a86"/>
+      <stop offset=".45" stop-color="#11222f"/>
+      <stop offset="1" stop-color="#0a141c"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(40 0)">
+  <!-- puck on the floor, just ahead of the stick -->
+  <g transform="translate(1004 590)">
+    <ellipse cx="4" cy="26" rx="84" ry="18" fill="#041a2e" opacity=".45" filter="url(#soft)"/>
+    <path d="M-58 0 v18 a58 16 0 0 0 116 0 v-18z" fill="url(#puckSide)"/>
+    <ellipse cx="0" cy="0" rx="58" ry="16" fill="#4b545e"/>
+    <ellipse cx="-12" cy="-3" rx="28" ry="6" fill="#7a8591" opacity=".6"/>
+  </g>
+
+  <!-- the player, swimming down and to the right -->
+  <g transform="translate(480 290) rotate(16)">
+
+    <!-- far leg, kicking up, and its fin -->
+    <path d="M-20 -14 L-160 -42" stroke="#c98a69" stroke-width="44" stroke-linecap="round"/>
+    <path d="M-160 -42 L-282 -82" stroke="#c98a69" stroke-width="30" stroke-linecap="round"/>
+    <g transform="translate(-282 -82) rotate(18) scale(.95)" opacity=".9">
+      <path d="M-40 -14 L-182 -32 Q-198 -33 -198 -18 L-198 20 Q-198 34 -182 33 L-40 15 Z" fill="url(#fin)"/>
+      <path d="M-60 -10 L-186 -22 M-60 10 L-186 22" stroke="#6fcf98" stroke-width="3" opacity=".6"/>
+      <rect x="-58" y="-17" width="70" height="34" rx="12" fill="#17252f"/>
+    </g>
+
+    <!-- near leg and fin -->
+    <path d="M-20 10 L-170 26" stroke="#eab48f" stroke-width="48" stroke-linecap="round"/>
+    <path d="M-170 26 L-300 20" stroke="#eab48f" stroke-width="32" stroke-linecap="round"/>
+    <g transform="translate(-300 20) rotate(3)">
+      <path d="M-40 -14 L-182 -32 Q-198 -33 -198 -18 L-198 20 Q-198 34 -182 33 L-40 15 Z" fill="url(#fin)"/>
+      <path d="M-60 -10 L-186 -22 M-60 10 L-186 22" stroke="#6fcf98" stroke-width="3" opacity=".6"/>
+      <rect x="-58" y="-17" width="70" height="34" rx="12" fill="#17252f"/>
+    </g>
+
+    <!-- torso in a patterned swimming costume -->
+    <path d="M-34 -30 C-10 -40 60 -34 110 -38 C150 -42 180 -44 196 -30 C210 -16 210 16 196 30
+             C176 46 150 48 128 42 C100 34 70 30 40 32 C10 34 -20 40 -34 30 C-50 18 -50 -20 -34 -30 Z" fill="url(#costume)"/>
+    <path d="M-34 -30 C-10 -40 60 -34 110 -38 C150 -42 180 -44 196 -30 C210 -16 210 16 196 30
+             C176 46 150 48 128 42 C100 34 70 30 40 32 C10 34 -20 40 -34 30 C-50 18 -50 -20 -34 -30 Z"
+          fill="none" stroke="#1d6b2c" stroke-width="3" opacity=".55"/>
+    <!-- bare shoulders above the costume -->
+    <path d="M170 -42 C188 -46 204 -36 210 -22 L214 14 C206 10 194 4 180 2 C182 -14 178 -30 170 -42 Z" fill="url(#skin)"/>
+
+    <!-- neck and head -->
+    <path d="M200 -16 L228 -20 L232 30 L204 26 Z" fill="url(#skin)"/>
+    <circle cx="250" cy="6" r="50" fill="url(#skin)"/>
+    <!-- hat with ear guard -->
+    <path d="M204 26 C190 -10 210 -46 250 -48 C280 -50 298 -36 299 -20
+             C278 -22 258 -16 246 -2 C238 10 232 30 226 46 C214 42 206 36 204 26 Z" fill="#141c24"/>
+    <!-- cheek and chin -->
+    <path d="M262 50 C276 48 290 40 296 30" fill="none" stroke="#c98463" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+    <circle cx="230" cy="14" r="18" fill="#26323d" stroke="#0b1117" stroke-width="3"/>
+    <circle cx="230" cy="14" r="6.5" fill="#0b1117"/>
+    <!-- mask strap and mask -->
+    <path d="M226 -26 C252 -34 276 -26 292 -10" fill="none" stroke="#f2c230" stroke-width="6" stroke-linecap="round"/>
+    <g transform="translate(286 22) rotate(-64)">
+      <rect x="-32" y="-20" width="64" height="40" rx="16" fill="#f2c230"/>
+      <rect x="-25" y="-13" width="50" height="26" rx="12" fill="url(#lens)"/>
+      <path d="M-16 -7 L2 -7" stroke="#bfe9ff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    </g>
+    <!-- snorkel: mouthpiece, then up the side of the head -->
+    <path d="M274 58 C254 62 232 56 222 38 C206 10 204 -34 210 -84" fill="none" stroke="#0e161d" stroke-width="13" stroke-linecap="round"/>
+    <path d="M210 -76 L211 -94" stroke="#f2c230" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- stick, held out in front -->
+    <g transform="translate(394 96) rotate(-4)">
+      <rect x="-20" y="-11" width="176" height="22" rx="11" fill="url(#stick)"/>
+      <path d="M148 -11 C186 -10 204 6 206 34 C200 40 186 40 180 34 C178 18 168 11 148 11 Z" fill="url(#stick)"/>
+    </g>
+
+    <!-- near arm, reaching forward -->
+    <path d="M184 26 C232 66 300 86 380 94" fill="none" stroke="#eab48f" stroke-width="30" stroke-linecap="round"/>
+    <!-- padded glove -->
+    <g transform="translate(398 96) rotate(4)">
+      <rect x="-28" y="-20" width="54" height="40" rx="15" fill="#f4b53a"/>
+      <path d="M-14 -20 V20 M0 -20 V20 M13 -19 V19" stroke="#c9861a" stroke-width="3"/>
+      <rect x="-32" y="-16" width="10" height="32" rx="5" fill="#d8962a"/>
+    </g>
+  </g>
+
+  <!-- bubbles rising from the snorkel -->
+  <g fill="none" stroke="#effcff" stroke-width="3" opacity=".75">
+    <circle cx="704" cy="160" r="7"/>
+    <circle cx="694" cy="116" r="10"/>
+    <circle cx="712" cy="72" r="6"/>
+    <circle cx="698" cy="34" r="8"/>
+  </g>
+  </g>
+</svg>

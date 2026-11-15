@@ -51,8 +51,8 @@
         </div>
       </div>
       {% if site.hero_photo != '' %}
-      <figure class="hero-photo">
-        <img src="{{ site.hero_photo | relative_url }}" alt="{{ site.hero_photo_alt }}" width="1000" height="1000">
+      <figure class="hero-photo{% if site.hero_photo contains '.svg' %} hero-photo--illustration{% endif %}">
+        <img src="{{ site.hero_photo | relative_url }}" alt="{{ site.hero_photo_alt }}">
       </figure>
       {% endif %}
     </div>

@@ -1,144 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-  <!-- Banner illustration: looking along the bottom of a pool, with light
-       coming through the surface, a lane line, a goal tray, a stick and a puck. -->
   <defs>
     <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#36b6cf"/>
-      <stop offset=".22" stop-color="#1888b3"/>
-      <stop offset=".55" stop-color="#0d5687"/>
-      <stop offset="1" stop-color="#0a3a63"/>
+      <stop offset="0" stop-color="#1fa3c2"/>
+      <stop offset=".35" stop-color="#0f6c9c"/>
+      <stop offset=".75" stop-color="#0a3c66"/>
+      <stop offset="1" stop-color="#072543"/>
     </linearGradient>
     <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e9fdff" stop-opacity=".30"/>
-      <stop offset=".7" stop-color="#e9fdff" stop-opacity=".05"/>
-      <stop offset="1" stop-color="#e9fdff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1b77a3"/>
-      <stop offset=".35" stop-color="#2a8fb8"/>
-      <stop offset="1" stop-color="#3aa6c9"/>
+      <stop offset="0" stop-color="#0d4a76"/>
+      <stop offset="1" stop-color="#0a3355"/>
     </linearGradient>
-    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0d5687" stop-opacity=".95"/>
-      <stop offset="1" stop-color="#0d5687" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="leftShade" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#062a4a" stop-opacity=".55"/>
-      <stop offset=".55" stop-color="#062a4a" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="glow" cx=".72" cy="0" r=".7">
-      <stop offset="0" stop-color="#d9fbff" stop-opacity=".45"/>
-      <stop offset="1" stop-color="#d9fbff" stop-opacity="0"/>
+    <radialGradient id="glow" cx=".7" cy=".1" r=".6">
+      <stop offset="0" stop-color="#bff3ff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#bff3ff" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="stickBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#cfd9e0"/>
-    </linearGradient>
-    <linearGradient id="puckSide" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#1e2329"/>
-      <stop offset=".5" stop-color="#3a424b"/>
-      <stop offset="1" stop-color="#1e2329"/>
-    </linearGradient>
-    <linearGradient id="tray" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e8f0f4"/>
-      <stop offset="1" stop-color="#9fb4c2"/>
-    </linearGradient>
-
-    <!-- Moving-water texture for the light patterns on the floor -->
-    <filter id="caustics" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency=".010 .028" numOctaves="2" seed="7"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -9 5.1"/>
-      <feComposite in2="SourceGraphic" operator="in"/>
-    </filter>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6"/>
-    </filter>
-    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
-
-    <clipPath id="floorClip"><path d="M0 650 L1600 650 V900 H0Z"/></clipPath>
   </defs>
 
-  <!-- water -->
   <rect width="1600" height="900" fill="url(#water)"/>
   <rect width="1600" height="900" fill="url(#glow)"/>
 
-  <!-- underside of the surface -->
-  <path d="M0 0 H1600 V46 C1500 64 1420 34 1320 52 S1120 70 1020 50 820 30 720 52 520 72 420 50 220 34 120 54 0 44Z" fill="#a8edf7" opacity=".38"/>
-  <path d="M0 74 C140 58 260 92 400 74 S660 52 800 74 1060 98 1200 76 1460 56 1600 74" fill="none" stroke="#e3fbff" stroke-width="3" opacity=".28"/>
-  <path d="M0 104 C160 92 300 118 460 104 S760 86 920 104 1220 122 1380 104 1560 92 1600 100" fill="none" stroke="#e3fbff" stroke-width="2" opacity=".14"/>
+  <!-- surface ripples -->
+  <path d="M0 40 C100 20 200 60 300 40 S500 20 600 40 800 60 900 40 1100 20 1200 40 1400 60 1500 40 1600 30 V0 H0Z" fill="#9fe7f5" opacity=".35"/>
+  <path d="M0 70 C120 55 220 90 340 72 S560 50 680 70 900 95 1020 72 1260 50 1380 70 1560 88 1600 70" fill="none" stroke="#d6f8ff" stroke-width="3" opacity=".25"/>
 
   <!-- light rays -->
   <g>
-    <polygon points="700,0 760,0 610,640 500,640" fill="url(#ray)" opacity=".55"/>
-    <polygon points="930,0 1010,0 880,660 740,660" fill="url(#ray)"/>
-    <polygon points="1110,0 1160,0 1120,680 1010,680" fill="url(#ray)" opacity=".8"/>
-    <polygon points="1290,0 1370,0 1450,660 1300,660" fill="url(#ray)" opacity=".75"/>
-    <polygon points="1470,0 1510,0 1640,620 1560,620" fill="url(#ray)" opacity=".6"/>
+    <polygon points="980,0 1060,0 900,760 760,760" fill="url(#ray)"/>
+    <polygon points="1150,0 1210,0 1180,820 1060,820" fill="url(#ray)" opacity=".8"/>
+    <polygon points="1320,0 1400,0 1500,780 1360,780" fill="url(#ray)" opacity=".7"/>
+    <polygon points="760,0 800,0 620,700 540,700" fill="url(#ray)" opacity=".5"/>
+    <polygon points="1460,0 1500,0 1640,700 1570,700" fill="url(#ray)" opacity=".6"/>
   </g>
 
-  <!-- pool floor, seen in perspective -->
-  <g clip-path="url(#floorClip)">
-    <rect x="0" y="650" width="1600" height="250" fill="url(#floor)"/>
-    <!-- tile joints converging on a point beyond the far wall -->
-    <g stroke="#bfeaf5" stroke-width="2" opacity=".35">
-      <path d="M800 540 L-900 900"/><path d="M800 540 L-500 900"/><path d="M800 540 L-140 900"/>
-      <path d="M800 540 L200 900"/><path d="M800 540 L520 900"/><path d="M800 540 L800 900"/>
-      <path d="M800 540 L1080 900"/><path d="M800 540 L1400 900"/><path d="M800 540 L1740 900"/>
-      <path d="M800 540 L2100 900"/><path d="M800 540 L2500 900"/>
-    </g>
-    <g stroke="#bfeaf5" stroke-width="2" opacity=".3">
-      <path d="M0 664 H1600"/><path d="M0 684 H1600"/><path d="M0 712 H1600"/>
-      <path d="M0 750 H1600"/><path d="M0 802 H1600"/><path d="M0 872 H1600"/>
-    </g>
-    <!-- dark lane line with its T at the far end -->
-    <path d="M775 650 L825 650 L990 900 L860 900Z" fill="#0b3557" opacity=".85"/>
-    <path d="M710 652 L890 652 L894 661 L706 661Z" fill="#0b3557" opacity=".75"/>
-    <!-- light patterns from the surface -->
-    <rect x="0" y="650" width="1600" height="250" fill="#ffffff" filter="url(#caustics)" opacity=".22"/>
-    <!-- distance haze -->
-    <rect x="0" y="640" width="1600" height="100" fill="url(#haze)"/>
+  <!-- pool floor -->
+  <path d="M0 720 L1600 690 V900 H0Z" fill="url(#floor)"/>
+  <!-- lane marking in perspective -->
+  <path d="M1040 700 L1110 698 L1250 900 L1100 900Z" fill="#06223d" opacity=".75"/>
+  <path d="M960 702 L1200 696 L1205 712 L955 718Z" fill="#06223d" opacity=".6"/>
+  <!-- floor caustics -->
+  <g fill="none" stroke="#7fd8ec" stroke-width="2" opacity=".18">
+    <path d="M100 780 q40 -20 80 0 t80 0 t80 0"/>
+    <path d="M520 820 q40 -20 80 0 t80 0 t80 0"/>
+    <path d="M1260 760 q40 -20 80 0 t80 0 t80 0"/>
+    <path d="M820 860 q40 -20 80 0 t80 0"/>
   </g>
 
-  <!-- goal tray on the floor at the right -->
-  <g>
-    <ellipse cx="1480" cy="742" rx="190" ry="20" fill="#06294a" opacity=".35" filter="url(#soft)"/>
-    <path d="M1330 690 L1640 676 L1640 700 L1330 716Z" fill="#f4f9fb"/>
-    <path d="M1330 716 L1640 700 L1640 748 L1330 760Z" fill="url(#tray)"/>
-    <g stroke="#7f97a8" stroke-width="3" opacity=".7">
-      <path d="M1370 714 V757"/><path d="M1420 712 V755"/><path d="M1470 709 V752"/>
-      <path d="M1520 707 V750"/><path d="M1570 704 V747"/>
-    </g>
-  </g>
-
-  <!-- puck on the floor -->
-  <g transform="translate(1190 806)">
-    <ellipse cx="6" cy="30" rx="96" ry="20" fill="#05223d" opacity=".55" filter="url(#soft)"/>
-    <path d="M-70 0 v22 a70 20 0 0 0 140 0 v-22z" fill="url(#puckSide)"/>
-    <ellipse cx="0" cy="0" rx="70" ry="20" fill="#4b545e"/>
-    <ellipse cx="-14" cy="-4" rx="34" ry="8" fill="#7a8591" opacity=".6"/>
-  </g>
-
-  <!-- stick about to play the puck -->
-  <g transform="translate(850 724) rotate(12)">
-    <ellipse cx="150" cy="70" rx="160" ry="14" fill="#05223d" opacity=".35" filter="url(#soft)"/>
-    <!-- handle and shaft -->
-    <rect x="0" y="0" width="250" height="30" rx="15" fill="url(#stickBody)"/>
-    <rect x="0" y="0" width="96" height="30" rx="15" fill="#18222c"/>
-    <rect x="12" y="6" width="74" height="4" rx="2" fill="#3b4855" opacity=".8"/>
-    <!-- curved playing head -->
-    <path d="M236 0 C288 0 312 22 314 58 C306 66 288 66 280 60 C278 40 266 30 236 30Z" fill="url(#stickBody)"/>
+  <!-- goal tray at right edge -->
+  <g opacity=".9">
+    <path d="M1430 640 L1600 628 L1600 700 L1430 712Z" fill="#c9d6df"/>
+    <path d="M1430 640 L1600 628 L1600 642 L1430 654Z" fill="#eef4f8"/>
+    <path d="M1430 654 L1600 642 L1600 700 L1430 712Z" fill="#8aa1b2"/>
   </g>
 
   <!-- bubbles -->
-  <g fill="none" stroke="#effcff" stroke-width="3" opacity=".6">
-    <circle cx="1080" cy="196" r="9"/><circle cx="1098" cy="158" r="6"/>
-    <circle cx="1072" cy="124" r="10"/><circle cx="1094" cy="84" r="5"/>
-    <circle cx="790" cy="560" r="8"/><circle cx="806" cy="500" r="5"/>
-    <circle cx="784" cy="440" r="10"/><circle cx="802" cy="372" r="6"/>
-    <circle cx="1530" cy="520" r="8"/><circle cx="1548" cy="460" r="5"/>
-    <circle cx="1522" cy="400" r="10"/><circle cx="1545" cy="330" r="6"/>
+  <g fill="none" stroke="#e6fbff" stroke-width="3" opacity=".55">
+    <circle cx="1350" cy="520" r="8"/>
+    <circle cx="1370" cy="460" r="5"/>
+    <circle cx="1340" cy="400" r="10"/>
+    <circle cx="1365" cy="330" r="6"/>
+    <circle cx="1480" cy="300" r="7"/>
+    <circle cx="1500" cy="240" r="4"/>
   </g>
-
-  <!-- slight shading behind the heading so the text stays easy to read -->
-  <rect width="1600" height="900" fill="url(#leftShade)"/>
 </svg>
