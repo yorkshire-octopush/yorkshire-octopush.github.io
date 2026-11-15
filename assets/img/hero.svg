@@ -56,8 +56,29 @@
     <path d="M1430 654 L1600 642 L1600 700 L1430 712Z" fill="#8aa1b2"/>
   </g>
 
+  <!-- puck -->
+  <g transform="translate(1200 735)">
+    <ellipse cx="0" cy="22" rx="70" ry="16" fill="#041a2e" opacity=".5"/>
+    <path d="M-52 0 v14 a52 15 0 0 0 104 0 v-14z" fill="#2a2f36"/>
+    <ellipse cx="0" cy="0" rx="52" ry="15" fill="#4a525c"/>
+    <ellipse cx="-10" cy="-3" rx="26" ry="6" fill="#6b7480" opacity=".7"/>
+  </g>
+
+  <!-- stick -->
+  <g transform="translate(905 742) rotate(-4)">
+    <rect x="0" y="0" width="190" height="26" rx="13" fill="#f4f6f8"/>
+    <path d="M178 0 q46 4 52 40 q-6 6 -24 4 q-4 -22 -30 -18z" fill="#f4f6f8"/>
+    <rect x="0" y="0" width="70" height="26" rx="13" fill="#1d2630"/>
+  </g>
+
   <!-- bubbles -->
   <g fill="none" stroke="#e6fbff" stroke-width="3" opacity=".55">
+    <circle cx="1080" cy="560" r="10"/>
+    <circle cx="1100" cy="500" r="7"/>
+    <circle cx="1070" cy="450" r="12"/>
+    <circle cx="1095" cy="380" r="6"/>
+    <circle cx="1060" cy="320" r="9"/>
+    <circle cx="1085" cy="250" r="5"/>
     <circle cx="1350" cy="520" r="8"/>
     <circle cx="1370" cy="460" r="5"/>
     <circle cx="1340" cy="400" r="10"/>

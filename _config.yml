@@ -39,8 +39,8 @@ hero_image: /assets/img/hero.svg
 # Picture shown on the right of the banner, and its description for people
 # using screen readers. An .svg file is shown as an illustration; a photo
 # (.jpg or .png) is shown in a rounded frame. Leave it empty ("") for none.
-hero_photo: /assets/img/hero-player.svg
-hero_photo_alt: Illustration of a young underwater hockey player swimming down to play the puck with her stick
+hero_photo: /assets/img/hero-player.jpg
+hero_photo_alt: An underwater hockey player swimming towards the bottom of the pool, holding her stick
 
 # Short label above the main heading
 hero_kicker: Octopush in Leeds
