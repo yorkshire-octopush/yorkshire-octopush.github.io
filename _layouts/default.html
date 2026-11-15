@@ -40,14 +40,21 @@
   <!-- ===== Banner at the top of the page ===== -->
   <section class="hero{% unless site.hero_image contains '.svg' %} hero--photo{% endunless %}"
            style="background-image: url('{{ site.hero_image | relative_url }}');">
-    <div class="wrap hero-inner">
-      <p class="hero-kicker">Underwater hockey · Octopush</p>
-      <h1>{{ site.title }}</h1>
-      <p class="hero-tagline">{{ site.tagline }}</p>
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#join">Come and try it</a>
-        <a class="btn btn-ghost" href="#training">When &amp; where</a>
+    <div class="wrap hero-inner{% if site.hero_photo != '' %} hero-inner--photo{% endif %}">
+      <div class="hero-text">
+        <p class="hero-kicker">{{ site.hero_kicker }}</p>
+        <h1>{{ site.title }}</h1>
+        <p class="hero-tagline">{{ site.tagline }}</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#join">Come and try it</a>
+          <a class="btn btn-ghost" href="#training">When &amp; where</a>
+        </div>
       </div>
+      {% if site.hero_photo != '' %}
+      <figure class="hero-photo">
+        <img src="{{ site.hero_photo | relative_url }}" alt="{{ site.hero_photo_alt }}" width="1000" height="1000">
+      </figure>
+      {% endif %}
     </div>
   </section>
 
@@ -82,19 +89,14 @@
 
         {% if s.gallery %}
           {% assign photos = site.static_files | where_exp: "f", "f.path contains '/assets/img/gallery/'" %}
-          {% assign shown = 0 %}
           <div class="gallery">
           {% for p in photos %}
             {% assign ext = p.extname | downcase %}
             {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}
-              {% assign shown = shown | plus: 1 %}
-              <figure><img src="{{ p.path | relative_url }}" alt="{{ s.photo_alt | default: 'Yorkshire Octopush Juniors in action' }}" loading="lazy"></figure>
+              <figure><img src="{{ p.path | relative_url }}" alt="{{ s.photo_alt | default: 'Our players in action' }}" loading="lazy"></figure>
             {% endif %}
           {% endfor %}
           </div>
-          {% if shown == 0 %}
-            <p class="todo">TODO: no photos yet. Add .jpg or .png files to the folder assets/img/gallery and they will appear here automatically.</p>
-          {% endif %}
         {% endif %}
 
         {% if s.map %}
@@ -115,7 +117,7 @@
 
         {% if s.contact_button %}
         <p class="contact-cta">
-          <a class="btn btn-primary btn-large" href="mailto:{{ site.email }}?subject=Yorkshire%20Octopush%20Juniors">Email us: {{ site.email }}</a>
+          <a class="btn btn-primary btn-large" href="mailto:{{ site.email }}?subject={{ site.title | uri_escape }}">Email us: {{ site.email }}</a>
         </p>
         {% endif %}
       </div>
@@ -131,6 +133,9 @@
         <p>{{ site.training.day }} {{ site.training.time }} · {{ site.training.venue }}, {{ site.training.place }}</p>
         <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       </div>
+      <a class="footer-boa" href="https://www.gbuwh.co.uk" target="_blank" rel="noopener">
+        <img src="{{ '/assets/img/boa-logo.png' | relative_url }}" alt="British Octopush Association" width="120" loading="lazy">
+      </a>
       <ul class="footer-links">
         {% for l in site.footer_links %}
         <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name }}</a></li>

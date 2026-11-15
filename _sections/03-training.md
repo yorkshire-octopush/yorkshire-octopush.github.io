@@ -9,7 +9,7 @@ map: true
 
 We train on **{{ site.training.day }}, {{ site.training.time }}**, at **{{ site.training.venue }}** on the {{ site.training.place }}.
 
-Please arrive about ten minutes early so that you are changed and ready to get in the water on time.
+Please arrive about fifteen minutes early so that you are changed and ready to get in the water on time.
 
 ### What to bring
 

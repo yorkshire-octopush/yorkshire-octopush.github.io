@@ -6,3 +6,5 @@ _site/
 vendor/
 .bundle/
 *.swp
+assets/img/BOA_leaflet.pdf
+assets/img/BOA_Logo.png

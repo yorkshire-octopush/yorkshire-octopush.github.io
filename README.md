@@ -1,6 +1,6 @@
-# Yorkshire Octopush Juniors website
+# Yorkshire Junior Underwater Hockey Club website
 
-A one-page website for Yorkshire Octopush Juniors, built with Jekyll so that GitHub Pages turns the Markdown files into the finished site automatically. There is nothing to install and no build step.
+A one-page website for Yorkshire Junior Underwater Hockey Club, built with Jekyll so that GitHub Pages turns the Markdown files into the finished site automatically. There is nothing to install and no build step.
 
 ## Where the site lives
 

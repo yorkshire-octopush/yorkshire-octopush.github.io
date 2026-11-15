@@ -1,5 +1,5 @@
 /* =====================================================================
-   Yorkshire Octopush Juniors – styles
+   Yorkshire Junior Underwater Hockey Club – styles
    Colours are defined once here; change them to restyle the whole site.
    ===================================================================== */
 
@@ -146,10 +146,15 @@ h3 { font-size: 1.5rem; color: var(--deep); margin-top: 1.4em; }
   background: linear-gradient(90deg, rgba(8,33,59,.85) 0%, rgba(8,33,59,.45) 60%, rgba(8,33,59,.2) 100%);
 }
 .hero-inner { position: relative; width: 100%; }
+.hero-inner--photo {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: 48px; align-items: center;
+}
 .hero h1 {
-  font-size: clamp(3rem, 9vw, 6rem);
+  font-size: clamp(2.6rem, 6.4vw, 4.9rem);
+  line-height: 1;
   text-transform: uppercase;
-  max-width: 11ch;
+  max-width: 13ch;
   margin-bottom: .25em;
   text-shadow: 0 2px 24px rgba(4, 22, 40, .35);
 }
@@ -162,6 +167,28 @@ h3 { font-size: 1.5rem; color: var(--deep); margin-top: 1.4em; }
 }
 .hero-tagline { font-size: clamp(1.2rem, 2.6vw, 1.5rem); max-width: 30ch; margin: 0 0 32px; color: #e4f6fb; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Photo on the right of the banner, in a rounded water-drop shape */
+.hero-photo {
+  position: relative; margin: 0;
+  justify-self: end; width: min(100%, 440px);
+}
+.hero-photo img {
+  width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 45% 50%;
+  border-radius: 58% 42% 50% 50% / 46% 50% 50% 54%;
+  border: 6px solid rgba(234, 251, 255, .9);
+  box-shadow: 0 24px 60px rgba(4, 22, 40, .45);
+}
+.hero-photo::before {
+  content: ""; position: absolute; inset: -18px;
+  border-radius: 50% 50% 46% 54% / 52% 46% 54% 48%;
+  border: 2px solid rgba(234, 251, 255, .35);
+  pointer-events: none;
+}
+@media (max-width: 860px) {
+  .hero-inner--photo { grid-template-columns: 1fr; gap: 32px; }
+  .hero-photo { justify-self: center; width: min(78%, 340px); order: -1; }
+}
 
 /* ----- Key facts strip ----- */
 .facts { position: relative; margin-top: -56px; z-index: 2; }
@@ -226,6 +253,10 @@ main > .section:first-child { padding-top: 104px; }
 }
 .card h3 { margin: 0 0 .3em; font-size: 1.4rem; }
 .card p { margin: 0; font-size: 1.02rem; color: var(--muted); }
+/* Cards on a dark background ("Come and try it") */
+.section--dark .card { background: rgba(255,255,255,.08); border-top-color: var(--sun); }
+.section--dark .card h3 { color: var(--white); }
+.section--dark .card p { color: #cfe3ec; }
 
 /* Frequently asked questions */
 details {
@@ -282,6 +313,37 @@ details > :not(summary) { margin-top: 0; }
 
 .contact-cta { margin-top: 28px; }
 
+/* Video and British Octopush Association links under "What is octopush?" */
+.learn-more {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px;
+  margin-top: 36px;
+}
+.learn-more a {
+  display: flex; align-items: center; gap: 18px;
+  padding: 18px 22px; border-radius: var(--radius);
+  text-decoration: none; line-height: 1.4; font-size: 1rem;
+  transition: transform .15s ease;
+}
+.learn-more a:hover { transform: translateY(-2px); }
+.learn-more strong { display: block; font-family: var(--head); font-size: 1.35rem; margin-bottom: 2px; }
+.learn-more-video { background: var(--navy); color: #cfe6ef; }
+.learn-more-video:hover { color: #cfe6ef; }
+.learn-more-video strong { color: var(--white); }
+.learn-more .play {
+  flex: none; width: 60px; height: 60px; border-radius: 50%;
+  background: var(--sun); position: relative;
+}
+.learn-more .play::after {
+  content: ""; position: absolute; left: 24px; top: 19px;
+  border-style: solid; border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--navy);
+}
+.learn-more-boa { background: var(--white); color: var(--muted); border: 1px solid var(--line); }
+.learn-more-boa:hover { color: var(--muted); }
+.learn-more-boa strong { color: var(--deep); }
+.learn-more-boa img { flex: none; width: 96px; height: auto; }
+@media (max-width: 760px) { .learn-more { grid-template-columns: 1fr; } }
+
 /* Placeholder text still to be written. Search the files for "TODO". */
 .todo {
   display: block;
@@ -300,6 +362,8 @@ p > .todo:only-child { margin: 0; }
 .footer-inner p { margin: 0 0 4px; }
 .footer-title { font-family: var(--head); font-size: 1.4rem; font-weight: 700; color: var(--white); }
 .footer-links { list-style: none; margin: 0; padding: 0; }
+.footer-boa { order: 3; flex: none; align-self: center; }
+.footer-boa img { width: 120px; height: auto; background: var(--white); border-radius: 10px; padding: 8px 10px; }
 
 @media (max-width: 560px) {
   body { font-size: 1.06rem; }
@@ -310,5 +374,8 @@ p > .todo:only-child { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn { transition: none; }
+  .btn, .learn-more a { transition: none; }
 }
+
+/* Space between the cards and a paragraph that follows them */
+.prose .cards + p { margin-top: 28px; }

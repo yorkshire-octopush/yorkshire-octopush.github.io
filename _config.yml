@@ -1,15 +1,15 @@
 # =====================================================================
-#  Yorkshire Octopush Juniors – site settings
+#  Yorkshire Junior Underwater Hockey Club – site settings
 #
 #  Most of the key facts used across the site live here, so you only
 #  need to change them in one place. After editing this file, GitHub
 #  Pages rebuilds the site automatically (it can take a minute or two).
 # =====================================================================
 
-title: Yorkshire Octopush Juniors
+title: Yorkshire Junior Underwater Hockey Club
 tagline: Underwater hockey for children and young people in Leeds and across Yorkshire
 description: >-
-  Yorkshire Octopush Juniors is the junior section of Team Yorkshire
+  Yorkshire Junior Underwater Hockey Club is the junior section of Team Yorkshire
   Underwater Hockey Club, for players aged 8 and over.
   We train on Saturday afternoons at The Edge swimming pool, University of
   Leeds. New players are welcome: just come along.
@@ -35,6 +35,14 @@ logo: /assets/img/logo.svg
 # Leave as hero.svg (an illustration) or replace with a photo, e.g.
 # /assets/img/hero.jpg. Photos are darkened slightly so the text stays legible.
 hero_image: /assets/img/hero.svg
+
+# Photo shown on the right of the banner, and its description for people
+# using screen readers. Leave hero_photo empty ("") to show no photo.
+hero_photo: /assets/img/hero-player.jpg
+hero_photo_alt: An underwater hockey player swimming towards the bottom of the pool, holding her stick
+
+# Short label above the main heading
+hero_kicker: Octopush in Leeds
 
 # Links shown in the footer
 footer_links:

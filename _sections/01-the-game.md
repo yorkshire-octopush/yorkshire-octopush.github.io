@@ -40,3 +40,20 @@ Long metal trays at each end of the pool floor. Score by pushing or flicking the
 </div>
 
 </div>
+
+<div class="learn-more">
+  <a class="learn-more-video" href="https://www.youtube.com/watch?v=aTqkhr_5-Eo" target="_blank" rel="noopener">
+    <span class="play" aria-hidden="true"></span>
+    <span>
+      <strong>Watch: How do you play underwater hockey?</strong>
+      A four-minute introduction from Underwater Hockey New Zealand (opens YouTube)
+    </span>
+  </a>
+  <a class="learn-more-boa" href="https://www.gbuwh.co.uk" target="_blank" rel="noopener">
+    <img src="{{ '/assets/img/boa-logo.png' | relative_url }}" alt="" width="96" loading="lazy">
+    <span>
+      <strong>British Octopush Association</strong>
+      More about the sport in Great Britain
+    </span>
+  </a>
+</div>
