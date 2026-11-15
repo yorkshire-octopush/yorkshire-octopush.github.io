@@ -13,7 +13,7 @@ If you would rather ask a question first, or want to check that a session is run
 <div class="cards" markdown="1">
 
 <div class="card" markdown="1">
-### Ages 8 to 17
+### Ages 8+
 Young people of all abilities, from complete beginners upwards.
 </div>
 

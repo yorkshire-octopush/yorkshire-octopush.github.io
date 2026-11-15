@@ -9,7 +9,7 @@ style: light
 <details markdown="1">
 <summary>Who can join?</summary>
 
-Young people aged 8 to 17, whether or not they have played before.
+Children and young people aged 8+, whether or not they have played before.
 </details>
 
 <details markdown="1">
