@@ -1,0 +1,71 @@
+# =====================================================================
+#  Yorkshire Octopush Juniors – site settings
+#
+#  Most of the key facts used across the site live here, so you only
+#  need to change them in one place. After editing this file, GitHub
+#  Pages rebuilds the site automatically (it can take a minute or two).
+# =====================================================================
+
+title: Yorkshire Octopush Juniors
+tagline: Underwater hockey for young people in Leeds and across Yorkshire
+description: >-
+  Yorkshire Octopush Juniors is the junior section of Team Yorkshire
+  Underwater Hockey Club, for players aged 8 to 17.
+  We train on Saturday afternoons at The Edge swimming pool, University of
+  Leeds. New players are welcome: just come along.
+
+# Contact email shown on the site.
+email: email@email.com
+
+# Weekly training session
+training:
+  day: Saturdays
+  time: "2:45pm – 3:45pm"
+  venue: The Edge swimming pool
+  place: University of Leeds campus
+  address: "The Edge, University of Leeds, Woodhouse Lane, Leeds LS2 9JT"
+  map_link: "https://www.google.com/maps/search/?api=1&query=The+Edge+University+of+Leeds+LS2+9JT"
+  map_embed: "https://www.google.com/maps?q=The+Edge,+University+of+Leeds,+LS2+9JT&output=embed"
+
+# Logo shown in the header. Replace the file, or point this at your own
+# image (e.g. /assets/img/logo.png).
+logo: /assets/img/logo.svg
+
+# Large picture behind the heading at the top of the page.
+# Leave as hero.svg (an illustration) or replace with a photo, e.g.
+# /assets/img/hero.jpg. Photos are darkened slightly so the text stays legible.
+hero_image: /assets/img/hero.svg
+
+# Links shown in the footer
+footer_links:
+  - name: Team Yorkshire Underwater Hockey Club
+    url: https://www.gbuwh.co.uk/club.php?club_id=3
+  - name: British Octopush Association
+    url: https://www.gbuwh.co.uk
+
+# ---------------------------------------------------------------------
+#  Technical settings: you should not normally need to change these.
+# ---------------------------------------------------------------------
+
+# The site lives at https://yorkshire-octopush.github.io/
+# If you later use a custom domain (e.g. www.yorkshireoctopush.co.uk),
+# change url to that address and add the domain under Settings -> Pages.
+baseurl: ""
+url: "https://yorkshire-octopush.github.io"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Each file in the _sections folder becomes one section of the home page,
+# in the order given by the file names (01-, 02-, ...).
+collections:
+  sections:
+    output: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

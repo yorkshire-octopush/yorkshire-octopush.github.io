@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1fa3c2"/>
+      <stop offset=".35" stop-color="#0f6c9c"/>
+      <stop offset=".75" stop-color="#0a3c66"/>
+      <stop offset="1" stop-color="#072543"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d4a76"/>
+      <stop offset="1" stop-color="#0a3355"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".7" cy=".1" r=".6">
+      <stop offset="0" stop-color="#bff3ff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#bff3ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#water)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- surface ripples -->
+  <path d="M0 40 C100 20 200 60 300 40 S500 20 600 40 800 60 900 40 1100 20 1200 40 1400 60 1500 40 1600 30 V0 H0Z" fill="#9fe7f5" opacity=".35"/>
+  <path d="M0 70 C120 55 220 90 340 72 S560 50 680 70 900 95 1020 72 1260 50 1380 70 1560 88 1600 70" fill="none" stroke="#d6f8ff" stroke-width="3" opacity=".25"/>
+
+  <!-- light rays -->
+  <g>
+    <polygon points="980,0 1060,0 900,760 760,760" fill="url(#ray)"/>
+    <polygon points="1150,0 1210,0 1180,820 1060,820" fill="url(#ray)" opacity=".8"/>
+    <polygon points="1320,0 1400,0 1500,780 1360,780" fill="url(#ray)" opacity=".7"/>
+    <polygon points="760,0 800,0 620,700 540,700" fill="url(#ray)" opacity=".5"/>
+    <polygon points="1460,0 1500,0 1640,700 1570,700" fill="url(#ray)" opacity=".6"/>
+  </g>
+
+  <!-- pool floor -->
+  <path d="M0 720 L1600 690 V900 H0Z" fill="url(#floor)"/>
+  <!-- lane marking in perspective -->
+  <path d="M1040 700 L1110 698 L1250 900 L1100 900Z" fill="#06223d" opacity=".75"/>
+  <path d="M960 702 L1200 696 L1205 712 L955 718Z" fill="#06223d" opacity=".6"/>
+  <!-- floor caustics -->
+  <g fill="none" stroke="#7fd8ec" stroke-width="2" opacity=".18">
+    <path d="M100 780 q40 -20 80 0 t80 0 t80 0"/>
+    <path d="M520 820 q40 -20 80 0 t80 0 t80 0"/>
+    <path d="M1260 760 q40 -20 80 0 t80 0 t80 0"/>
+    <path d="M820 860 q40 -20 80 0 t80 0"/>
+  </g>
+
+  <!-- goal tray at right edge -->
+  <g opacity=".9">
+    <path d="M1430 640 L1600 628 L1600 700 L1430 712Z" fill="#c9d6df"/>
+    <path d="M1430 640 L1600 628 L1600 642 L1430 654Z" fill="#eef4f8"/>
+    <path d="M1430 654 L1600 642 L1600 700 L1430 712Z" fill="#8aa1b2"/>
+  </g>
+
+  <!-- puck -->
+  <g transform="translate(1200 735)">
+    <ellipse cx="0" cy="22" rx="70" ry="16" fill="#041a2e" opacity=".5"/>
+    <path d="M-52 0 v14 a52 15 0 0 0 104 0 v-14z" fill="#2a2f36"/>
+    <ellipse cx="0" cy="0" rx="52" ry="15" fill="#4a525c"/>
+    <ellipse cx="-10" cy="-3" rx="26" ry="6" fill="#6b7480" opacity=".7"/>
+  </g>
+
+  <!-- stick -->
+  <g transform="translate(1010 650) rotate(-18)">
+    <rect x="0" y="0" width="190" height="26" rx="13" fill="#f4f6f8"/>
+    <path d="M178 0 q46 4 52 40 q-6 6 -24 4 q-4 -22 -30 -18z" fill="#f4f6f8"/>
+    <rect x="0" y="0" width="70" height="26" rx="13" fill="#1d2630"/>
+  </g>
+
+  <!-- bubbles -->
+  <g fill="none" stroke="#e6fbff" stroke-width="3" opacity=".55">
+    <circle cx="1080" cy="560" r="10"/>
+    <circle cx="1100" cy="500" r="7"/>
+    <circle cx="1070" cy="450" r="12"/>
+    <circle cx="1095" cy="380" r="6"/>
+    <circle cx="1060" cy="320" r="9"/>
+    <circle cx="1085" cy="250" r="5"/>
+    <circle cx="1350" cy="520" r="8"/>
+    <circle cx="1370" cy="460" r="5"/>
+    <circle cx="1340" cy="400" r="10"/>
+    <circle cx="1365" cy="330" r="6"/>
+    <circle cx="1480" cy="300" r="7"/>
+    <circle cx="1500" cy="240" r="4"/>
+  </g>
+</svg>

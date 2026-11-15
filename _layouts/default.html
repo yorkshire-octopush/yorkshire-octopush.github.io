@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description | strip_newlines | escape }}">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description | strip_newlines | escape }}">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#08213b">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Header and menu ===== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ site.logo | relative_url }}" alt="" width="40" height="40">
+        <span>{{ site.title }}</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          {% for s in site.sections %}{% if s.nav %}
+          <li><a href="#{{ s.anchor }}">{{ s.nav }}</a></li>
+          {% endif %}{% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Banner at the top of the page ===== -->
+  <section class="hero{% unless site.hero_image contains '.svg' %} hero--photo{% endunless %}"
+           style="background-image: url('{{ site.hero_image | relative_url }}');">
+    <div class="wrap hero-inner">
+      <p class="hero-kicker">Underwater hockey · Octopush</p>
+      <h1>{{ site.title }}</h1>
+      <p class="hero-tagline">{{ site.tagline }}</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#join">Come and try it</a>
+        <a class="btn btn-ghost" href="#training">When &amp; where</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Key facts strip ===== -->
+  <div class="facts">
+    <div class="wrap facts-inner">
+      <div class="fact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><strong>{{ site.training.day }}</strong><span>{{ site.training.time }}</span></div>
+      </div>
+      <div class="fact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <div><strong>{{ site.training.venue }}</strong><span>{{ site.training.place }}</span></div>
+      </div>
+      <div class="fact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><path d="M2 20c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><circle cx="12" cy="6" r="2.5"/></svg>
+        <div><strong>New players welcome</strong><span>Just come along</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Page sections (one per file in the _sections folder) ===== -->
+  <main id="main">
+    {% for s in site.sections %}
+    <section id="{{ s.anchor }}" class="section section--{{ s.style | default: 'light' }}">
+      <div class="wrap{% if s.wide %} wrap--wide{% endif %}">
+        {% if s.kicker %}<p class="kicker">{{ s.kicker }}</p>{% endif %}
+        <h2>{{ s.title }}</h2>
+        <div class="prose">
+          {{ s.content }}
+        </div>
+
+        {% if s.gallery %}
+          {% assign photos = site.static_files | where_exp: "f", "f.path contains '/assets/img/gallery/'" %}
+          {% assign shown = 0 %}
+          <div class="gallery">
+          {% for p in photos %}
+            {% assign ext = p.extname | downcase %}
+            {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}
+              {% assign shown = shown | plus: 1 %}
+              <figure><img src="{{ p.path | relative_url }}" alt="{{ s.photo_alt | default: 'Yorkshire Octopush Juniors in action' }}" loading="lazy"></figure>
+            {% endif %}
+          {% endfor %}
+          </div>
+          {% if shown == 0 %}
+            <p class="todo">TODO: no photos yet. Add .jpg or .png files to the folder assets/img/gallery and they will appear here automatically.</p>
+          {% endif %}
+        {% endif %}
+
+        {% if s.map %}
+        <div class="venue">
+          <div class="venue-card">
+            <h3>Training</h3>
+            <dl>
+              <dt>When</dt><dd>{{ site.training.day }}, {{ site.training.time }}</dd>
+              <dt>Where</dt><dd>{{ site.training.address }}</dd>
+            </dl>
+            <a class="btn btn-primary" href="{{ site.training.map_link }}" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+          <div class="venue-map">
+            <iframe src="{{ site.training.map_embed }}" title="Map showing The Edge, University of Leeds" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if s.contact_button %}
+        <p class="contact-cta">
+          <a class="btn btn-primary btn-large" href="mailto:{{ site.email }}?subject=Yorkshire%20Octopush%20Juniors">Email us: {{ site.email }}</a>
+        </p>
+        {% endif %}
+      </div>
+    </section>
+    {% endfor %}
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-title">{{ site.title }}</p>
+        <p>{{ site.training.day }} {{ site.training.time }} · {{ site.training.venue }}, {{ site.training.place }}</p>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <ul class="footer-links">
+        {% for l in site.footer_links %}
+        <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Small-screen menu: open and close, and close after choosing a link.
+    (function () {
+      var btn = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          btn.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('is-open');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

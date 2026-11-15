@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Placeholder mark: replace with the club logo -->
+  <circle cx="32" cy="32" r="30" fill="#0c3559"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#2ec4d6" stroke-width="3"/>
+  <path d="M12 26c3.3 0 3.3-3 6.7-3s3.3 3 6.6 3 3.4-3 6.7-3 3.3 3 6.7 3 3.3-3 6.6-3 3.4 3 6.7 3" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+  <ellipse cx="32" cy="43" rx="11" ry="4.5" fill="#ffc93c"/>
+  <rect x="21" y="38" width="22" height="5" fill="#ffc93c"/>
+  <ellipse cx="32" cy="38" rx="11" ry="4.5" fill="#ffe08a"/>
+</svg>
