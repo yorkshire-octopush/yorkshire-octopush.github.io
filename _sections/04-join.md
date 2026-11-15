@@ -29,4 +29,4 @@ Just bring a swimming costume and a towel.
 
 </div>
 
-<span class="todo">TODO: cost, e.g. "Your first session is free; after that it is £X per session".</span>
+New players can come and try it for free. After that, sessions cost £20 a month, paid by direct debit.

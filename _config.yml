@@ -39,7 +39,7 @@ hero_image: /assets/img/hero.svg
 # Links shown in the footer
 footer_links:
   - name: Team Yorkshire Underwater Hockey Club
-    url: https://www.gbuwh.co.uk/club.php?club_id=3
+    url: https://www.gbuwh.co.uk/clubs/yorkshire
   - name: British Octopush Association
     url: https://www.gbuwh.co.uk
 
