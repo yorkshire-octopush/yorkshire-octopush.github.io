@@ -53,6 +53,9 @@
       {% if site.hero_photo != '' %}
       <figure class="hero-photo{% if site.hero_photo contains '.svg' %} hero-photo--illustration{% endif %}">
         <img src="{{ site.hero_photo | relative_url }}" alt="{{ site.hero_photo_alt }}">
+        {% if site.hero_badge and site.hero_badge != '' %}
+        <img class="hero-badge" src="{{ site.hero_badge | relative_url }}" alt="{{ site.hero_badge_alt }}" width="668" height="152">
+        {% endif %}
       </figure>
       {% endif %}
     </div>

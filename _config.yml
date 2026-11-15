@@ -42,6 +42,11 @@ hero_image: /assets/img/hero.svg
 hero_photo: /assets/img/hero-player.jpg
 hero_photo_alt: An underwater hockey player swimming towards the bottom of the pool, holding her stick
 
+# Club badge shown across the lower edge of that picture. It is a crop of
+# yorkshire_logo.jpg. Leave it empty ("") for none.
+hero_badge: /assets/img/yorkshire-wordmark.jpg
+hero_badge_alt: Yorkshire Underwater Hockey Club
+
 # Short label above the main heading
 hero_kicker: Octopush in Leeds
 
